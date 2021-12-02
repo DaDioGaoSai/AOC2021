@@ -1,16 +1,21 @@
 package com.aoc2021.app;
 
+import java.util.List;
+
 import com.aoc2021.base.Solution;
-import com.aoc2021.day2.SolutionOne;
-import com.aoc2021.day2.SolutionTwo;
+import com.aoc2021.day1.SonarSweepOne;
+import com.aoc2021.day1.SonarSweepTwo;
+import com.aoc2021.day2.DiveOne;
+import com.aoc2021.day2.DiveTwo;
 
 public class Main {
 	public static void main(String[] args) {
-		Solution solutionOne = new SolutionOne();
-		solutionOne.run();
+		final List<Solution> solutions = List.of(new SonarSweepOne(), new SonarSweepTwo(), new DiveOne(),
+				new DiveTwo());
 
-		Solution solutionTwo = new SolutionTwo();
-		solutionTwo.run();
+		solutions.forEach(solution -> {
+			solution.run();
+		});
 	}
 
 }

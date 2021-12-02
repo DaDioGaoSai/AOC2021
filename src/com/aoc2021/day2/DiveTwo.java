@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.aoc2021.base.Solution;
 
-public class SolutionTwo extends Solution {
+public class DiveTwo extends Solution {
 
 	private final String fileName = "D:\\Dev\\AOC\\AOC2021\\src\\com\\aoc2021\\day2\\testData2.txt";
 
-	public SolutionTwo() {
+	public DiveTwo() {
 		super(2, 2);
 	}
 

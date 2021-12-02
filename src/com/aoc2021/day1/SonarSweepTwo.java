@@ -5,11 +5,11 @@ import java.util.List;
 import com.aoc2021.base.Solution;
 import com.aoc2021.util.TestDataUtil;
 
-public class SolutionTwo extends Solution {
+public class SonarSweepTwo extends Solution {
 
 	private final String fileName = "D:\\Dev\\AOC\\AOC2021\\src\\com\\aoc2021\\day1\\testData2.txt";
 
-	public SolutionTwo() {
+	public SonarSweepTwo() {
 		super(1, 2);
 	}
 
