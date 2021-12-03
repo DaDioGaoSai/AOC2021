@@ -3,7 +3,7 @@ package com.aoc2021.day1;
 import java.util.List;
 
 import com.aoc2021.base.Solution;
-import com.aoc2021.util.TestDataUtil;
+import com.aoc2021.util.AocUtils;
 
 public class SonarSweepOne extends Solution {
 
@@ -14,7 +14,7 @@ public class SonarSweepOne extends Solution {
 	}
 
 	public void run() {
-		final List<Integer> inputList = TestDataUtil.convertStrListToInteger(getSingleLineInput(fileName));
+		final List<Integer> inputList = AocUtils.convertStrListToInteger(getSingleLineInput(fileName));
 		int result = -1;
 		int previous = -1;
 
