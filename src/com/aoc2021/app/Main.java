@@ -11,11 +11,13 @@ import com.aoc2021.day3.BinaryDiagnosticOne;
 import com.aoc2021.day3.BinaryDiagnosticTwo;
 import com.aoc2021.day4.GiantSquidOne;
 import com.aoc2021.day4.GiantSquidTwo;
+import com.aoc2021.day5.HydrothermalVentureOne;
 
 public class Main {
 	public static void main(String[] args) {
 		final List<Solution> solutions = List.of(new SonarSweepOne(), new SonarSweepTwo(), new DiveOne(), new DiveTwo(),
-				new BinaryDiagnosticOne(), new BinaryDiagnosticTwo(), new GiantSquidOne(), new GiantSquidTwo());
+				new BinaryDiagnosticOne(), new BinaryDiagnosticTwo(), new GiantSquidOne(), new GiantSquidTwo(),
+				new HydrothermalVentureOne());
 
 		solutions.forEach(solution -> {
 			solution.run();
