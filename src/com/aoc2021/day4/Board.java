@@ -8,32 +8,19 @@ import java.util.stream.Collectors;
 public class Board {
 
 	private final List<Point> points;
-	private final int id;
 
-	public Board(int id, List<Point> points) {
+	public Board(List<Point> points) {
 		this.points = points;
-		this.id = id;
 	}
 
 	public List<Point> getPoints() {
 		return this.points;
 	}
 
-	public void printBoard() {
-		System.out.println(String.format("The layout of Board %d:", this.id));
-		int previousY = 0;
-		for (int i = 0; i < points.size(); i++) {
-			if (points.get(i).y() != previousY) {
-				previousY = points.get(i).y();
-				System.out.println();
-			}
-			System.out.print(String.format("%-2s ", points.get(i).value()));
-		}
-		System.out.println();
-	}
-
-	public List<Point> getWonPoints(List<Integer> sequence) {
+	public List<Point> getWinningPattern(List<Integer> sequence) {
 		List<Point> points = getGuessdPointsFromTheBoard(sequence);
+		points.forEach(point -> point.setMark(true));
+
 		Map<Integer, List<Point>> rowMatched = points.stream()
 				.collect(Collectors.groupingBy(Point::y, Collectors.toList()));
 		Map<Integer, List<Point>> columnMatched = points.stream()
@@ -41,7 +28,6 @@ public class Board {
 
 		for (Map.Entry<Integer, List<Point>> entry : columnMatched.entrySet()) {
 			if (entry.getValue().size() == 5) {
-
 				return entry.getValue();
 			}
 		}
@@ -52,6 +38,16 @@ public class Board {
 			}
 		}
 		return Collections.emptyList();
+	}
+
+	public int getSumOfUnmarked() {
+		int result = 0;
+		for (Point point : points) {
+			if (!point.isMarked()) {
+				result += point.value();
+			}
+		}
+		return result;
 	}
 
 	private List<Point> getGuessdPointsFromTheBoard(List<Integer> sequence) {
